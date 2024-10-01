@@ -18,3 +18,9 @@ logs/
 # dbt
 target/
 .user.yml
+
+# Environments
+.env
+.venv
+env/
+venv/
