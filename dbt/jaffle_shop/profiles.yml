@@ -1,0 +1,12 @@
+airflow_db:
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: host.docker.internal
+      port: 5432
+      user: airflow
+      pass: airflow
+      dbname: airflow
+      schema: dbt
+  target: dev
