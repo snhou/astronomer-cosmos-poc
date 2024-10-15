@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - make venv
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - make lint
+  build:
+    on-failure: ABORT
+    commands:
+      - make test

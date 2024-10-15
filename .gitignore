@@ -18,9 +18,18 @@ logs/
 # dbt
 target/
 .user.yml
+packages.yml
+package-lock.yml
 
 # Environments
 .env
 .venv
-env/
-venv/
+*env/
+*venv/
+config/
+
+# Linter
+.ruff_cache/
+
+# Testing
+.pytest_cache/

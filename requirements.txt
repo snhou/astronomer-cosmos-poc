@@ -1,3 +1,9 @@
 astronomer-cosmos
 dbt-core
 dbt-postgres
+sqlfluff
+sqlfluff-templater-dbt
+ruff
+pre-commit
+pytest
+fabric

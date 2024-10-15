@@ -27,8 +27,9 @@ def simple_task_group() -> None:
     )
 
     post_dbt = EmptyOperator(task_id="post_dbt")
+    final_dbt = EmptyOperator(task_id="final_dbt")
 
-    pre_dbt >> jaffle_shop >> post_dbt
+    pre_dbt >> jaffle_shop >> post_dbt >> final_dbt
 
 
 simple_task_group()

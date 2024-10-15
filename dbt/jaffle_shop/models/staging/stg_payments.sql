@@ -1,22 +1,22 @@
 {{ config(tags=['customers']) }}
 
-with source as (
+WITH source AS (
 
-    select * from {{ ref('raw_payments') }}
+    SELECT * FROM {{ ref('raw_payments') }}
 
 ),
 
-renamed as (
+renamed AS (
 
-    select
-        id as payment_id,
+    SELECT
+        id AS payment_id,
         order_id,
         payment_method,
 
-        amount / 100 as amount
+        amount / 100 AS amount
 
-    from source
+    FROM source
 
 )
 
-select * from renamed
+SELECT * FROM renamed

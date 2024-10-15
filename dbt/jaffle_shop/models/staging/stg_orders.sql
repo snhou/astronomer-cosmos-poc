@@ -1,21 +1,20 @@
 {{ config(tags=['customers']) }}
 
-with source as (
+WITH source AS (
 
-    select * from {{ ref('raw_orders') }}
+    SELECT * FROM {{ ref('raw_orders') }}
 
 ),
 
-renamed as (
-
-    select
-        id as order_id,
-        user_id as customer_id,
+renamed AS (
+    SELECT
+        id AS order_id,
+        user_id AS customer_id,
         order_date,
         status
 
-    from source
+    FROM source
 
 )
 
-select * from renamed
+SELECT * FROM renamed

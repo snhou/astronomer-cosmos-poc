@@ -1,0 +1,20 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    SSH_KEY: {YOUR SECRET ARN}
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install fabric
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo "$SSH_KEY" | base64 -d > "$KEY_PATH"
+  build:
+    on-failure: ABORT
+    commands:
+      - fab staging

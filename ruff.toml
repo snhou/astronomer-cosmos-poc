@@ -1,0 +1,20 @@
+target-version = "py39"
+
+select = [
+    "E",
+    "F"
+]
+
+ignore = [
+    "E501"
+]
+
+line-length = 88
+
+exclude = [
+    "tests/",
+    "docs/",
+    "__pycache__/",
+    ".git/",
+	"logs"
+]
